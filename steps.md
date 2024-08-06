@@ -1,4 +1,4 @@
 - `créer une url, une vue pour un titre d'entrée`
-- créer l'html associé et le rendre lisible
+- créer l'html associé et organiser la page avec titre et contenu
 - le search doit mener vers entry
 - créer la page d'erreur si le TITRE pas correct

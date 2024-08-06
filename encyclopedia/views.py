@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 from . import util
 
@@ -7,6 +7,7 @@ def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
     })
+
 
 def entry(request,TITLE):
     """
@@ -20,3 +21,11 @@ def entry(request,TITLE):
         return render(request, "encyclopedia/entry.html", context={'content':content})
     else:
         return render(request, "encyclopedia/error.html")
+    
+
+def query(request):
+    """
+    View to take the input search and to redirect to the corresponding entry page
+    """
+    TITLE = request.POST["q"]
+    return redirect(f"/wiki/{TITLE}")
