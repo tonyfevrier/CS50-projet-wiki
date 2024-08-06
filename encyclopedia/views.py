@@ -29,3 +29,10 @@ def query(request):
     """
     TITLE = request.POST["q"]
     return redirect(f"/wiki/{TITLE}")
+
+
+def error(request):
+    """
+    View rendering an error page when the list of entries does not contain the query
+    """
+    return render(request, "error.html")
