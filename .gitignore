@@ -1,0 +1,4 @@
+encyclopedia/__pycache__/
+encyclopedia/migrations/
+wiki/__pycache__/
+db.sqlite3
