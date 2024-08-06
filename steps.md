@@ -1,2 +1,2 @@
-- créer une url, une vue pour un titre d'entrée
+- `créer une url, une vue pour un titre d'entrée`
 - créer l'html associé
