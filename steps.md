@@ -4,5 +4,9 @@
 - `créer la page d'erreur si le TITRE pas correct`
 - `création de la page query error, url`
 - `créer la vue qui checke si la chaine est une sous chaine d'entrées existantes : éventuellement passer la query dans l'url si besoin.`
-- créer une page avec input (newpage)
+- `créer une page avec input (newpage)`
+- `faire la vue de newpage`
+- `Bug: pourquoi ne voit pas newpage.html.`
+- `ajouter le message d'erreur à newpage`
+- Bug : j'ai créé une page avec Test, sur index page, le lien cliqué m'envoie sur la page d'erreur. Idem pour le search.
 - envoyer projet0 et 1 github après avoir lu les conditions de soumission

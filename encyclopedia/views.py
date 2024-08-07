@@ -13,9 +13,6 @@ def entry(request,TITLE):
     """
     View rendering the content of the theme given by TITLE
     """
-    """
-    si le titre correspond à une page alors on transmet son content sinon on génère une page d'erreur
-    """
     if TITLE in util.list_entries():
         content = util.get_entry(TITLE)
         return render(request, "encyclopedia/entry.html", context={'content':content})
@@ -32,8 +29,23 @@ def query(request):
     return redirect(f"/wiki/{TITLE}")
 
 
-def error(request):
+def newpage(request):
     """
-    View rendering an error page when the list of entries does not contain the query
+    View of the page allowing the user to create his own page
     """
-    return render(request, "error.html")
+    return render(request, "encyclopedia/newpage.html")
+
+
+def savenewpage(request):
+    """
+    View getting the information the user types during a page creation
+    """
+    title = request.POST['title']
+    content = request.POST['content']
+    
+    if title not in util.list_entries():
+        util.save_entry(title,content)
+        return redirect(f"/wiki/{title}")
+    else:
+        message = 'Your entry is already part of the wiki. Thus you can not create a new page but only edit it.'
+        return render(request, 'encyclopedia/newpage.html', context={'message':message})
