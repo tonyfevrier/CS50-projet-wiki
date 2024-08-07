@@ -35,3 +35,14 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
+def list_entries_containing_string(title):
+    """
+    Returns a list of all names of encyclopedia entries containing a given title
+    """
+    _, filenames = default_storage.listdir("entries")
+    entries = []
+    for filename in filenames:
+        if title in filename:
+            entries.append(filename)
+    return sorted(entries)
