@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Page creation
+{% endblock %}
+
+{% block body %}
+    <h1>Create here your new page</h1>
+    <form action="">
+        <label for="title">Enter your title here</label>
+        <input type="text" name="title" id="title">
+        <label for="content">Enter the content of your page in markdown</label>
+        <textarea name="content" id="content"></textarea>
+        <input type="submit">
+    </form>
+{% endblock %}

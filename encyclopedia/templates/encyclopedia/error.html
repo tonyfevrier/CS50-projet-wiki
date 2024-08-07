@@ -11,11 +11,11 @@
 
     {% if suggestions %}
         <p>Maybe you wanted to type one of those queries : </p>
-    <ul>
+        <ul>
         {% for suggestion in suggestions %}
             <li><a href="/wiki/{{suggestion}}">{{suggestion}}</a></li>
         {% endfor %}
-    </ul>
+        </ul>
     {% else %}
         <p> Try anything else in the search bar.</p>
     {% endif %}
