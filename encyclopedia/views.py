@@ -15,7 +15,7 @@ def entry(request,TITLE):
     """
     if TITLE in util.list_entries():
         content = util.get_entry(TITLE)
-        return render(request, "encyclopedia/entry.html", context={'content':content})
+        return render(request, "encyclopedia/entry.html", context={'title':TITLE, 'content':content})
     else:
         suggestions = util.list_entries_containing_string(TITLE)
         return render(request, "encyclopedia/error.html", context={'suggestions':suggestions})
@@ -49,3 +49,20 @@ def savenewpage(request):
     else:
         message = 'Your entry is already part of the wiki. Thus you can not create a new page but only edit it.'
         return render(request, 'encyclopedia/newpage.html', context={'message':message})
+    
+
+def editpage(request, TITLE):
+    """
+    View aiming to edit an existing page 
+    """
+    content = util.get_entry(TITLE)
+    return render(request, "encyclopedia/editpage.html", context={'title':TITLE,'content':content})
+
+
+def saveedition(request, TITLE):
+    """
+    View registering the edition of an existing page
+    """
+    content = request.POST['content']
+    util.save_entry(TITLE,content)
+    return redirect(f'/wiki/{TITLE}')
