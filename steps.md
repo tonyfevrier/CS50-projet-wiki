@@ -3,5 +3,5 @@
 - `le search doit mener vers entry`
 - `créer la page d'erreur si le TITRE pas correct`
 - `création de la page query error, url`
-- créer la vue qui checke si la chaine est une sous chaine d'entrées existantes : éventuellement passer la query dans l'url si besoin.
+- `créer la vue qui checke si la chaine est une sous chaine d'entrées existantes : éventuellement passer la query dans l'url si besoin.`
 - envoyer projet0 et 1 github après avoir lu les conditions de soumission

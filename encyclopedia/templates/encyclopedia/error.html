@@ -7,6 +7,17 @@
 {% block body %}
     <h1>Request not found</h1>
 
-    <p>Your query does not have any associated page. Try anything else.</p>
+    <p>Your query does not have any associated page.</p>
+
+    {% if suggestions %}
+        <p>Maybe you wanted to type one of those queries : </p>
+    <ul>
+        {% for suggestion in suggestions %}
+            <li><a href="/wiki/{{suggestion}}">{{suggestion}}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p> Try anything else in the search bar.</p>
+    {% endif %}
 
 {% endblock %}

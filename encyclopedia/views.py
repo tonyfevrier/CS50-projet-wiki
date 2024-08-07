@@ -20,7 +20,8 @@ def entry(request,TITLE):
         content = util.get_entry(TITLE)
         return render(request, "encyclopedia/entry.html", context={'content':content})
     else:
-        return render(request, "encyclopedia/error.html")
+        suggestions = util.list_entries_containing_string(TITLE)
+        return render(request, "encyclopedia/error.html", context={'suggestions':suggestions})
     
 
 def query(request):

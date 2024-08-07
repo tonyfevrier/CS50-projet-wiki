@@ -44,5 +44,5 @@ def list_entries_containing_string(title):
     entries = []
     for filename in filenames:
         if title in filename:
-            entries.append(filename)
+            entries.append(re.sub(r"\.md$", "", filename))
     return sorted(entries)
