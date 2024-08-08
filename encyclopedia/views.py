@@ -43,7 +43,7 @@ def savenewpage(request):
     title = request.POST['title']
     content = request.POST['content']
     
-    if title not in util.list_entries():
+    if title not in util.list_entries(): 
         util.save_entry(title,content)
         return redirect(f"/wiki/{title}")
     else:
@@ -62,7 +62,7 @@ def editpage(request, TITLE):
 def saveedition(request, TITLE):
     """
     View registering the edition of an existing page
-    """
-    content = request.POST['content']
+    """ 
+    content = request.POST['content'] 
     util.save_entry(TITLE,content)
     return redirect(f'/wiki/{TITLE}')

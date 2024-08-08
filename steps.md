@@ -10,8 +10,8 @@
 - `ajouter le message d'erreur à newpage`
 - `Bug : j'ai créé une page avec Test, sur index page, le lien cliqué m'envoie sur la page d'erreur. Idem pour le search.`
 - `view de editpage : passer le contenu existant`
-- créer une vue et url pour recevoir le nouveau contenu et l'enregistrer.
-- Bug : comprendre pourquoi le contenu n'est pas enregistré.
-- Ecrire deux tests unitaires testant la création et l'édition d'une page : peut aider à débugger le test.
+- `créer une vue et url pour recevoir le nouveau contenu de edit et l'enregistrer.`
+- `Bug : comprendre pourquoi le contenu n'est pas enregistré.`
+- `Ecrire deux tests unitaires testant la création et l'édition d'une page : peut aider à débugger le test.`
 - en cas d'espace inséré par erreur dans l'input titre, il faudrait nettoyer ces espaces (voir si re le permet)
 - envoyer projet0 et 1 github après avoir lu les conditions de soumission
