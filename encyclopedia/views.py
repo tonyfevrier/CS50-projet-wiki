@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
+from django.core.files.storage import default_storage
 
 from . import util
+from random import choice
+import re
 
 
 def index(request):
@@ -66,3 +69,14 @@ def saveedition(request, TITLE):
     content = request.POST['content'] 
     util.save_entry(TITLE,content)
     return redirect(f'/wiki/{TITLE}')
+
+
+def random(request):
+    """
+    View redirecting to a random entry
+    """
+    #choice of a random entry
+    _, filenames = default_storage.listdir('entries')
+    entry = re.sub(r"\.md$","",choice(filenames))
+    return redirect(f'/wiki/{entry}')
+    
