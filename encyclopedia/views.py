@@ -4,7 +4,8 @@ from django.core.files.storage import default_storage
 from . import util
 from random import choice
 import re
-
+import markdown2
+ 
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -18,7 +19,7 @@ def entry(request,TITLE):
     """
     if TITLE in util.list_entries():
         content = util.get_entry(TITLE)
-        return render(request, "encyclopedia/entry.html", context={'title':TITLE, 'content':content})
+        return render(request, "encyclopedia/entry.html", context={'title':TITLE, 'content':markdown2.markdown(content)})
     else:
         suggestions = util.list_entries_containing_string(TITLE)
         return render(request, "encyclopedia/error.html", context={'suggestions':suggestions})

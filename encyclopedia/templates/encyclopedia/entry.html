@@ -4,12 +4,10 @@
     Encyclopedia
 {% endblock %}
 
-{% block body %}
-    <h1>All Pages</h1>
+{% block body %} 
 
-    {{content}}
+    {{content|safe}}
 
     <a href="/wiki/{{title}}/edit">Edit the page</a>
-
 
 {% endblock %}
