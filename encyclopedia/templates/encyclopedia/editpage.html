@@ -7,9 +7,8 @@
 {% block body %}
     <h1>Edit the page of {{title}}</h1> 
     <form action="/wiki/{{title}}/saveedition" method="post">
-        {% csrf_token %} 
-        <label for="content">Modify the content of your page:</label>
+        {% csrf_token %}  
         <textarea name="content" id="content" value="{{content}}">{{content}}</textarea>
-        <input type="submit">
+        <input type="submit" value="Send">
     </form>
 {% endblock %}

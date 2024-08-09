@@ -12,9 +12,16 @@ h1 {
     padding-top: 20px;
 }
 
+input{
+    display:block ;
+    margin: 5px 0;
+}
+
 textarea {
-    height: 90vh;
+    display: block;
+    height: 78vh;
     width: 80%;
+    margin: 5px 0;
 }
 
 .main {
