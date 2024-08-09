@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.core.files.storage import default_storage
 
+from encyclopedia.util import clean_title
+
 class TestEntriesUpdating(TestCase):
 
     def test_newpage_creation(self):
@@ -22,7 +24,6 @@ class TestEntriesUpdating(TestCase):
         file.close()
         default_storage.delete("entries/testing.md")
         
-
     def test_editpage(self):
         """
         Test if the page content has been correctly updated after the edition of the page
@@ -42,6 +43,21 @@ class TestEntriesUpdating(TestCase):
         file.close()
         default_storage.delete("entries/test.md")
  
+
+class TestSring(TestCase):
+
+    def test_clean_string(self): 
+        self.assertEqual(clean_title("test"),"test")
+        self.assertEqual(clean_title("test "),"test")
+        self.assertEqual(clean_title(" test"),"test")
+        self.assertEqual(clean_title(""),"")
+        self.assertEqual(clean_title("t "),"t")
+        self.assertEqual(clean_title(" t"),"t")
+
+
+
+
+
 
 
         

@@ -46,3 +46,23 @@ def list_entries_containing_string(title):
         if title in filename:
             entries.append(re.sub(r"\.md$", "", filename))
     return sorted(entries)
+
+def clean_title(title):
+    """
+    Takes a title and eliminates superfluous spaces at the beginning or the end of the string
+    """  
+    word_beginning, end_beginning = 0, len(title)
+
+    #clean the beginning of the word
+    for i in range(len(title)):
+        if title[i] != " ":
+            break
+        word_beginning += 1 
+
+    #clean the end of the word
+    for i in range(len(title)):
+        if title[-i-1] != " ":
+            break
+        end_beginning -= 1 
+    
+    return title[word_beginning:end_beginning]

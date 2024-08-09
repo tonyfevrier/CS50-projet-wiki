@@ -48,7 +48,7 @@ def savenewpage(request):
     content = request.POST['content']
     
     if title not in util.list_entries(): 
-        util.save_entry(title,content)
+        util.save_entry(util.clean_title(title),content)
         return redirect(f"/wiki/{title}")
     else:
         message = 'Your entry is already part of the wiki. Thus you can not create a new page but only edit it.'
