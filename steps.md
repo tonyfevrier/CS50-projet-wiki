@@ -14,6 +14,9 @@
 - `Bug : comprendre pourquoi le contenu n'est pas enregistré.`
 - `Ecrire deux tests unitaires testant la création et l'édition d'une page : peut aider à débugger le test.`
 - `random page : créer une url random et une vue qui prend les entries et en choisit une au pif, puis redirige vers la page`
-- écriture d'un module markdown
-- en cas d'espace inséré par erreur dans l'input titre, il faudrait nettoyer ces espaces (voir si re le permet)
-- envoyer projet0 et 1 github après avoir lu les conditions de soumission
+- `écriture d'un module markdown : tester le fonctionnement`
+- `modifier ul li avec ^$ et multiline à la place des \n{2} : il semble buggé car je termine pas par \n. Voir peut-être en 2 temps : d'abord mettre les li puis repérer le li de début et le /li de fin pour l'entourer de ul. Pb compris : quand je remplace les p ça enlève les double \n\n avec mon code du coup on ne voit plus s'il y a un ou plusieurs sauts de lignes.`
+- `bug quand je clique sur send, le texte dans la fenêtre à éditer rajoute des sauts de ligne : ca semble être au moment où defautstorage save le contenu`
+- `si bug pas trouvé, dans les tests enlever les \n `
+- `tester faire un defaultst.save de "test\n\n pour voir si ça les convertit en \r\n"`
+- `en cas d'espace inséré par erreur dans l'input titre, il faudrait nettoyer ces espaces (voir si re le permet)` 
